@@ -29,7 +29,7 @@ public class Aluno {
         if (a == null || this.getClass() != a.getClass()) return false;
         Aluno aluno = (Aluno) a;
 
-        return matricula == aluno.matricula;
+        return matricula.equals(aluno.matricula);
     }
     public int hashCode(){
         return Objects.hash(matricula);
