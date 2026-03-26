@@ -26,7 +26,7 @@ public class ListaEncadeada<T> implements IColecao<T> {
 
     public T pesquisar(T valor) {
         No<T> noTemp = head;
-        while (noTemp.valor != null) {
+        while (noTemp != null) {
             if (noTemp.valor.equals(valor))
                 return noTemp.valor;
             noTemp = noTemp.proximo;
@@ -55,5 +55,26 @@ public class ListaEncadeada<T> implements IColecao<T> {
 
     public int quantidadeNos() {
         return this.quantidade;
+    }
+
+    public String toString(){
+        if (head == null){
+            return "Lista vazia.";
+        }
+
+        StringBuilder sb = new StringBuilder();
+        No<T> noTemp = head;
+
+        while (noTemp != null){
+            sb.append(noTemp.valor.toString());
+
+            if (noTemp.proximo != null){
+                sb.append(",\n");
+            }
+            
+        }   noTemp = noTemp.proximo;
+
+        return sb.toString();
+
     }
 }

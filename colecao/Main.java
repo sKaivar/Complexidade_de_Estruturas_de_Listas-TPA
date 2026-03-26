@@ -24,12 +24,12 @@ public class Main {
 
             switch(op){
                 case 1:
-                    System.out.println("Matricula: ");
+                    System.out.print("Matricula: ");
                     String mat = s.nextLine();
                     s.nextLine();
-                    System.out.println("Nome: ");
+                    System.out.print("Nome: ");
                     String nome = s.nextLine();
-                    System.out.println("Nota: ");
+                    System.out.print("Nota: ");
                     double nota  = s.nextDouble();
 
                     lstA.adicionar(new Aluno(nome, mat, nota));
@@ -61,12 +61,14 @@ public class Main {
                     break;  
                     
                 case 4:
+                    System.out.println("******************************");
                     System.out.println("***LISTA COMPLETA DE ALUNOS***");
-                    int qtdA = lstA.quantidadeNos();
-
-                    for(int i = 1; i < qtdA; i++){
-                        System.out.println(i  + ". " + lstA.toString());
-                    }
+                    if (lstA.quantidadeNos() == 0){
+                        System.out.println("Nenhum aluno matriculado.");
+                    }else{                        
+                        System.out.println(lstA.toString());
+                    }                    
+                    System.out.println("******************************");
                     break;
 
                 case 5:
