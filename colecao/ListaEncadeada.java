@@ -71,8 +71,8 @@ public class ListaEncadeada<T> implements IColecao<T> {
             if (noTemp.proximo != null){
                 sb.append(",\n");
             }
-            
-        }   noTemp = noTemp.proximo;
+            noTemp = noTemp.proximo;
+        }   
 
         return sb.toString();
 
