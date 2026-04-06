@@ -24,6 +24,7 @@ public class Aluno {
         return nota;
     }
 
+    @Override
     public boolean equals(Object a){
         if (this == a) return true;
         if (a == null || this.getClass() != a.getClass()) return false;
@@ -31,11 +32,13 @@ public class Aluno {
 
         return matricula.equals(aluno.matricula);
     }
+
+    @Override
     public int hashCode(){
         return Objects.hash(matricula);
     }
 
-
+    @Override
     public String toString(){
         return "Matricula: " + matricula + " / Nome: " + nome + " / Nota: " + nota;
     }
