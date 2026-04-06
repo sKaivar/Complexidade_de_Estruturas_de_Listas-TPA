@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args ){
         Scanner s = new Scanner(System.in).useLocale(Locale.US);
-        IColecao<Aluno> lstA = new ListaEncadeada<>();
+        IColecao<Aluno> lstA = new ListaEncadeadaLinkedList<>();
         int op = 0;
 
         while (op != 5){
@@ -120,10 +120,10 @@ public class Main {
                     
                     if (ultimo != null){
                         // 2. buscar ultimo elemento
-                        long IBuscaUlt = System.currentTimeMillis();
+                        long IBuscaUlt = System.nanoTime();
                         lstA.pesquisar(ultimo);
-                        long FBuscaUlt = System.currentTimeMillis();
-                        System.out.println("Tempo para buscar o ultimo elemento: " +(FBuscaUlt - IBuscaUlt) + " ms");
+                        long FBuscaUlt = System.nanoTime();
+                        System.out.println("Tempo para buscar o ultimo elemento: " +(FBuscaUlt - IBuscaUlt) + " ns");
 
                         // 3. buscar inexistente
                         Aluno nexist = new Aluno("lalala", "doidin doidilson", 0);
@@ -133,14 +133,15 @@ public class Main {
                         System.out.println("Tempo para buscar elemento inexistente: " + (FBuscaInex - IBuscaInex) + " ms");
                         
                         // 4. remover ultimo elemento
-                        long IRemoverUlt = System.currentTimeMillis();
+                        long IRemoverUlt = System.nanoTime();
                         lstA.remover(ultimo);
-                        long FRemoverUlt = System.currentTimeMillis();
-                        System.out.println("Tempo para remover o ultimo elemento: " + (FRemoverUlt - IRemoverUlt) + " ms");
+                        long FRemoverUlt = System.nanoTime();
+                        System.out.println("Tempo para remover o ultimo elemento: " + (FRemoverUlt - IRemoverUlt) + " ns");
                         
                         long IQuant = System.nanoTime();
                         int qtd = lstA.quantidadeNos();
                         long FQuant = System.nanoTime();
+                        System.out.println("Quantidade de nos: " + qtd);
                         System.out.println("Tempo para exibir quantidade de nos: " + (FQuant - IQuant) + " ns");
                     }
                     System.out.println("********************************************");                
