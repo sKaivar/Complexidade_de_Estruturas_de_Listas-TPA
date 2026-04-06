@@ -57,7 +57,7 @@ public class ListaEncadeada<T> implements IColecao<T> {
                 return true;
                 }
             }
-        }
+        
         return false;
     }
 
@@ -65,6 +65,7 @@ public class ListaEncadeada<T> implements IColecao<T> {
         return this.quantidade;
     }
 
+    @Override
     public String toString(){
         if (head == null){
             return "Lista vazia.";
