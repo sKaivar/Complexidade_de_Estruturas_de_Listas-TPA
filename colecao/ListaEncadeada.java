@@ -45,13 +45,13 @@ public class ListaEncadeada<T> implements IColecao<T> {
         }*/
         if (this.head.valor.equals(valor)) {
             this.head = this.head.proximo;
-            quantidade--;
+            this.quantidade--;
             return true;
         }
 
-        No<T> noTemp = head;
+        No<T> noTemp = this.head;
         
-        for (int i = 0; i < quantidade; i++) {
+        for (int i = 0; i < this.quantidade; i++) {
             if (noTemp.proximo.valor.equals(valor)) {
                 noTemp.proximo = noTemp.proximo.proximo;
                 return true;
