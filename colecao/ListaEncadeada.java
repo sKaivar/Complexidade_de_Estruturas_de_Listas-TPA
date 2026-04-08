@@ -9,6 +9,7 @@ public class ListaEncadeada<T> implements IColecao<T> {
         this.quantidade = 0;
     }
 
+    @Override
     public void adicionar(T novoValor) {
         if (head == null) {
             this.head = new No<>(novoValor);
@@ -19,11 +20,12 @@ public class ListaEncadeada<T> implements IColecao<T> {
             while (noTemp.proximo != null) {
                 noTemp = noTemp.proximo;
             }
-            noTemp.proximo = new No<T>(novoValor);
-            this.quantidade += 1;
+            noTemp.proximo = new No<>(novoValor);
+            this.quantidade++;
         }
     }
 
+    @Override
     public T pesquisar(T valor) {
         No<T> noTemp = head;
         while (noTemp != null) {
@@ -34,29 +36,34 @@ public class ListaEncadeada<T> implements IColecao<T> {
         return null;
     }
 
+    @Override
     public boolean remover(T valor) {
         No<T> noTemp = head;
-        for (int i = 0; i < quantidade; i++) {
-            if (noTemp.proximo.proximo != null) {
-                if (noTemp.proximo.valor.equals(valor)) {
-                    noTemp.proximo = noTemp.proximo.proximo;
-                    return true;
-                } // AQUI
+        
+        if (this.head == null) return false;
+
+        if (head.valor.equals(valor)) {
+            this.head = this.head.proximo;
+            this.quantidade--;
+            return true;
+        }
+        for (int i = 0; i < quantidade - 1; i++) {
+            if (noTemp.proximo.valor.equals(valor)) {
+                noTemp.proximo = noTemp.proximo.proximo;
+                this.quantidade--;
+                return true;
             }
-            else {
-                if (noTemp.proximo.valor.equals(valor)) {
-                    noTemp.proximo = null;
-                    return true;
-                }
-            }
+            noTemp = noTemp.proximo;
         }
         return false;
     }
 
+    @Override
     public int quantidadeNos() {
         return this.quantidade;
     }
 
+    @Override
     public String toString(){
         if (head == null){
             return "Lista vazia.";
@@ -68,13 +75,12 @@ public class ListaEncadeada<T> implements IColecao<T> {
         while (noTemp != null){
             sb.append(noTemp.valor.toString());
 
-            if (noTemp.proximo != null){
+            if (noTemp.proximo != null)
                 sb.append(",\n");
-            }
+        
             noTemp = noTemp.proximo;
         }   
 
         return sb.toString();
-
-    }
+    }    
 }
