@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args ){
         Scanner s = new Scanner(System.in).useLocale(Locale.US);
-        IColecao<Aluno> lstA = new ListaEncadeadaLinkedList<>();
+        IColecao<Aluno> lstA = new ListaEncadeada<>();
         int op = 0;
 
         while (op != 5){

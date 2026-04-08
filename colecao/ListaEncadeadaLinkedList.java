@@ -52,7 +52,22 @@ public class ListaEncadeadaLinkedList<T> implements IColecao<T> {
         return this.lst.size();
     }
 
-    
+    @Override
+    public String toString(){
+        if (this.lst.isEmpty()){
+            return "Lista vazia.";
+        }
+
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < this.lst.size(); i++){
+            sb.append(this.lst.get(i).toString());
+
+            if(i < this.lst.size() - 1){
+                sb.append("\n");
+            }
+        }
+        return sb.toString();
+    }    
 
 =======
     public boolean remover(T valor) {

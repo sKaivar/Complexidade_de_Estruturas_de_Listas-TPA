@@ -38,23 +38,23 @@ public class ListaEncadeada<T> implements IColecao<T> {
 
     @Override
     public boolean remover(T valor) {
-        No<T> noTemp = head;
-        
         if (this.head == null) return false;
-
-        if (head.valor.equals(valor)) {
+        
+        if (this.head.valor.equals(valor)) {
             this.head = this.head.proximo;
             this.quantidade--;
             return true;
         }
-        for (int i = 0; i < quantidade - 1; i++) {
+
+        No<T> noTemp = this.head;
+        
+        for (int i = 0; i < this.quantidade; i++) {
             if (noTemp.proximo.valor.equals(valor)) {
                 noTemp.proximo = noTemp.proximo.proximo;
-                this.quantidade--;
                 return true;
+                }
             }
-            noTemp = noTemp.proximo;
-        }
+        
         return false;
     }
 
