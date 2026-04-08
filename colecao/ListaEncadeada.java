@@ -65,12 +65,12 @@ public class ListaEncadeada<T> implements IColecao<T> {
 
     @Override
     public String toString(){
-        if (head == null){
+        if (this.head == null){
             return "Lista vazia.";
         }
 
         StringBuilder sb = new StringBuilder();
-        No<T> noTemp = head;
+        No<T> noTemp = this.head;
 
         while (noTemp != null){
             sb.append(noTemp.valor.toString());

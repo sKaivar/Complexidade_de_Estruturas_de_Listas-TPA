@@ -35,20 +35,19 @@ public class ListaEncadeadaArrayList<T> implements IColecao<T>{
     }
 
     @Override
-    public String toString(){
-        if (this.lst.isEmpty()){
+    public String toString() {
+        if (this.lst.isEmpty()) {
             return "Lista vazia.";
         }
 
         StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < this.lst.size(); i++){
+        for (int i = 0; i < this.lst.size(); i++) {
             sb.append(this.lst.get(i).toString());
-
-            if(i < this.lst.size() - 1){
-                sb.append("\n");
+            if (i < this.lst.size() - 1) {
+                sb.append(",\n");
             }
         }
         return sb.toString();
     }
-   
+
 }
