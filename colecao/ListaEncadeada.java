@@ -36,13 +36,7 @@ public class ListaEncadeada<T> implements IColecao<T> {
 
     public boolean remover(T valor) {
         if (this.head == null) return false;
-        /*if (quantidade == 1) {
-            if (this.head.valor.equals(valor)) {
-                this.head = null;
-                quantidade--;
-                return true;
-            }
-        }*/
+        
         if (this.head.valor.equals(valor)) {
             this.head = this.head.proximo;
             this.quantidade--;
