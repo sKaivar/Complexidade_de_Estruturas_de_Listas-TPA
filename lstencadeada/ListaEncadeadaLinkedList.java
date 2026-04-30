@@ -1,6 +1,8 @@
-package colecao;
+package lstencadeada;
 
 import java.util.LinkedList;
+
+import colecao.IColecao;
 
 public class ListaEncadeadaLinkedList<T> implements IColecao<T>{
     private LinkedList<T> lst;

@@ -1,4 +1,4 @@
-package colecao;
+package dominio;
 
 import java.util.Objects;
 

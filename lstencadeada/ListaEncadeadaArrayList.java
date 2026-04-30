@@ -1,6 +1,8 @@
-package colecao;
+package lstencadeada;
 
 import java.util.ArrayList;
+
+import colecao.IColecao;
 
 public class ListaEncadeadaArrayList<T> implements IColecao<T>{
     private ArrayList<T> lst;
