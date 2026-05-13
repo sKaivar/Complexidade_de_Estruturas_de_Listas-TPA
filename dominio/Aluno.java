@@ -3,9 +3,9 @@ package dominio;
 import java.util.Objects;
 
 public class Aluno {
-    private String nome;
-    private String matricula;
-    private double nota;
+    private final String nome;
+    private final String matricula;
+    private final double nota;
 
     public Aluno(String nome, String matricula, double nota) {
         this.nome = nome;

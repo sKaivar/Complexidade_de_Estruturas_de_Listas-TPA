@@ -5,23 +5,16 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Locale;
 import java.util.Scanner;
-import java.util.Comparator;
 
-
+import arvorebinaria.ArvoreBinaria;
 import colecao.IColecao;
-import arvorebinaria.ArvoreAVL;
+import lstencadeada.ListaEncadeada;
 
 
 public class Main {
     public static void main(String[] args ){
         Scanner s = new Scanner(System.in).useLocale(Locale.US);
-        Comparator<Aluno> compMat = new Comparator<Aluno>() {
-            @Override
-            public int compare(Aluno a, Aluno b){
-                return a.getMat().compareTo(b.getMat());
-            }
-        };
-        IColecao<Aluno> lstA = new ArvoreAVL<>(compMat);
+        IColecao<Aluno> lstA = new ListaEncadeada<>();
         int op = 0;
 
         while (op != 6){
