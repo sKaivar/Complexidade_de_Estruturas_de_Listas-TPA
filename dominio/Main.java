@@ -5,15 +5,18 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Locale;
 import java.util.Scanner;
+import java.util.Comparator;
 
+import arvorebinaria.ArvoreBinaria;
 import colecao.IColecao;
-import lstencadeada.ListaEncadeada;
+import comparadores.AlunoComparatorMatricula;
 
 
 public class Main {
     public static void main(String[] args ){
         Scanner s = new Scanner(System.in).useLocale(Locale.US);
-        IColecao<Aluno> lstA = new ListaEncadeada<>();
+        Comparator<Aluno> comparator = new AlunoComparatorMatricula();
+        IColecao<Aluno> lstA = new ArvoreBinaria<>(comparator);
         int op = 0;
 
         while (op != 5){
