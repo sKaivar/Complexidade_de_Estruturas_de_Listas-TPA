@@ -5,18 +5,26 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Locale;
 import java.util.Scanner;
+import java.util.Comparator;
+
 
 import colecao.IColecao;
-import lstencadeada.ListaEncadeada;
+import arvorebinaria.ArvoreAVL;
 
 
 public class Main {
     public static void main(String[] args ){
         Scanner s = new Scanner(System.in).useLocale(Locale.US);
-        IColecao<Aluno> lstA = new ListaEncadeada<>();
+        Comparator<Aluno> compMat = new Comparator<Aluno>() {
+            @Override
+            public int compare(Aluno a, Aluno b){
+                return a.getMat().compareTo(b.getMat());
+            }
+        };
+        IColecao<Aluno> lstA = new ArvoreAVL<>(compMat);
         int op = 0;
 
-        while (op != 5){
+        while (op != 6){
             System.out.println("GERENCIAMENTO DE ALUNOS\n");
             System.out.println("1. Adicionar aluno");
             System.out.println("2. Pesquisar aluno");

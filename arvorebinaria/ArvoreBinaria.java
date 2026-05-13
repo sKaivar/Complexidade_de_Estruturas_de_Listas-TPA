@@ -5,7 +5,7 @@ import lstencadeada.No;
 
 public class ArvoreBinaria<T> extends ArvoreBinariaBase<T>  {
     protected No<T> raiz;
-    private int tamNo;
+    protected int tamNo;
     
     public ArvoreBinaria(Comparator<T> comparador){
         super(comparador);
@@ -17,7 +17,7 @@ public class ArvoreBinaria<T> extends ArvoreBinariaBase<T>  {
         return calcularAltura(this.raiz);
     
     }     
-    private int calcularAltura(No<T> no){
+    protected int calcularAltura(No<T> no){
         if (no == null){
             return -1;
         }
